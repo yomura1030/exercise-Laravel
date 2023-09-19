@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,8 @@ use App\Http\Controllers\TestController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('post/create', [PostController::class, 'create']);
 
 Route::get('/test',[TestController::class,'test'])->name('test');
 
