@@ -16,6 +16,8 @@ use App\Http\Controllers\PostController;
 |
 */
 
+Route::get('post/shouw/{post}',[postController::class,'show'])->name('post.show');
+
 Route::get('post', [PostController::class, 'index']);
 
 Route::post('post', [PostController::class, 'store'])->name('post.store');
