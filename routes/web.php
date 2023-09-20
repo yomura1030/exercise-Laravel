@@ -16,13 +16,15 @@ use App\Http\Controllers\PostController;
 |
 */
 
+Route::delete('post/{post}', [PostController::class, 'destroy'])->name('post.destroy');
+
 Route::get('post/{post}/edit', [PostController::class, 'edit'])->name('post.edit');
 
 Route::patch('post/{post}', [PostController::class, 'update'])->name('post.update');
 
 Route::get('post/shouw/{post}',[postController::class,'show'])->name('post.show');
 
-Route::get('post', [PostController::class, 'index']);
+Route::get('post', [PostController::class, 'index'])->name('post.index');
 
 Route::post('post', [PostController::class, 'store'])->name('post.store');
 
