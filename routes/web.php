@@ -15,22 +15,7 @@ use App\Http\Controllers\PostController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::delete('post/{post}', [PostController::class, 'destroy'])->name('post.destroy');
-
-Route::get('post/{post}/edit', [PostController::class, 'edit'])->name('post.edit');
-
-Route::patch('post/{post}', [PostController::class, 'update'])->name('post.update');
-
-Route::get('post/shouw/{post}',[postController::class,'show'])->name('post.show');
-
-Route::get('post', [PostController::class, 'index'])->name('post.index');
-
-Route::post('post', [PostController::class, 'store'])->name('post.store');
-
-Route::get('post/create', [PostController::class, 'create']) ->middleware(['auth','admin']);
-
-Route::get('/test',[TestController::class,'test'])->name('test');
+Route::resource('post', PostController::class);
 
 Route::get('/', function () {
     return view('welcome');
